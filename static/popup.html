@@ -1,22 +1,27 @@
-<!doctype html>
-
 <html lang="en">
+
 <head>
+  <title>Wielosztuki</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <link rel="stylesheet" href="styles/popup.css">
-</head>
 
 <body>
-  <div class="container">
-    <h1>Hello World!</h1>
-
-    <p>Edit <u>static/popup.html</u> to change this page!</p>
-
-    <button id="go-to-options" class="button" style="margin-top: 2rem;">Open options page</button>
+  <div id="container">
+    <h1>Wielosztuki</h1>
+    <form id="form">
+      <label id="color-picker-label" for="color-picker">Wybierz kolor:</label>
+      <input type="color" id="color-picker" />
+      <button id="save-color-button" class="button">Zapisz kolor</button>
+    </form>
+    <p id="status-message"></p>
   </div>
 
+  <!-- Link to external script -->
   <script src="popup.js"></script>
 </body>
+
+<!doctype html>
+
 </html>

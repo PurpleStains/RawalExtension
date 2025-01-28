@@ -8,11 +8,19 @@
   },
   "content_scripts": [
     {
-      "matches": ["<all_urls>"],
-      "js": ["contentScript.js"]
+      "matches": [
+        "https://panel-g.baselinker.com/orders.php*",
+        "https://panel-e.baselinker.com/orders.php*"
+      ],
+      "js": ["contentScript.js"],
+      "run_at": "document_idle"
     }
   ],
-  "permissions": ["storage", "scripting"],
+  "permissions": ["storage", "scripting", "tabs","activeTab", "webNavigation"],
+  "host_permissions": [
+    "https://panel-g.baselinker.com/orders.php*",
+    "https://panel-e.baselinker.com/orders.php*"
+  ],
   "options_ui": {
     "page": "options.html",
     "open_in_tab": true
