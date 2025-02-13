@@ -56,7 +56,7 @@ import { LogMessage } from "./serviceLogger";
 
     const checkForQuantity = (text) => {
         // Regex to match patterns like "50 szt", "2szt", "2 szt", "2x"
-        const quantityRegex = /\b(\d+)\s?(sztuk|szt|x)\b/;
+        const quantityRegex = /\b(\d+)\s?(sztuk|szt)\b/;
         const match = text.toLowerCase().match(quantityRegex);
         if (match) {
             const quantity = parseInt(match[1], 10); // Extract and convert the quantity
@@ -101,17 +101,6 @@ import { LogMessage } from "./serviceLogger";
         quantityHTMLs.forEach(x => isMultipliedByQuantity(x));
     };
 
-
-    // const pollForChanges = () => {
-    //     const interval = setInterval(() => {
-    //         const target = getHTMLElement(productNameKey); // Update with your selector
-    //         if (target) {
-    //             highlightMultipliedProducts()
-    //         }
-    //     }, 750);
-    // };
-
-    // pollForChanges()
     setTimeout(highlightMultipliedProducts, 500);
 
 })();
